@@ -9,6 +9,8 @@ This plugin is inspired (and in many senses copies) the obs-image-reaction plugi
 My goals for this project are as follows:
 
 1. Create basic plugin template code and get it to compile and show up on OBS
-2. Be able to add an image to a scene on OBS
-3. Be able to alter the image based on audio input
-4. If I get to this point then I'm doing well!
+2. Get something to appear on OBS
+3. Be able to set properties for plugin (they will do nothing at this stage)
+4. Be able to add an image to a scene on OBS
+5. Be able to alter the image based on audio input
+6. If I get to this point then I'm doing well!

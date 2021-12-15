@@ -1,0 +1,3 @@
+// The configured options and settings for image-manipulation
+#define image_manipulation_VERSION_MAJOR @image-manipulation_VERSION_MAJOR@
+#define image_manipulation_VERSION_MINOR @image-manipulation_VERSION_MINOR@

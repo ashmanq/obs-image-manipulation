@@ -1,3 +1,6 @@
+#shell
+config.cfg
+
 #binaries
 *.exe
 *.dll
