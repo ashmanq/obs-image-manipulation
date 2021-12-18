@@ -34,7 +34,7 @@ To build the plugin follow these steps:
 3. Create a file in this directory and call it `config.cfg`.
 4. In this file put in the following code: 
    ```shell
-   OBS_PATH='Replace/with/libobs/folder/location'
+   OBS_PATH='Replace/with/OBS/code/folder/location'
    ```
    This is the location of the libobs folder on your computer which is where you will have OBS Studio installed. This step is for use on MacOS and might not be required for Linux or Windows (assuming OBS Studio is already installed).
 5. Run the build script using command: 
