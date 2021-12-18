@@ -3,7 +3,7 @@
 #include <iostream>
 #include <obs-module.h>
 #include <graphics/image-file.h>
-#include "image-manipulation.h"
+#include "image-manipulation.hpp"
 
 struct image_source {
 	obs_source_t *source;
@@ -20,7 +20,9 @@ struct image_source {
 	gs_image_file3_t if3;
 };
 
-int main() {
-    puts("Hello World!");
-    printf("Version: %d.%d\n", image_manipulation_VERSION_MAJOR, image_manipulation_VERSION_MINOR);
+OBS_DECLARE_MODULE()
+OBS_MODULE_USE_DEFAULT_LOCALE("image-manipulation", "en-GB")
+MODULE_EXPORT const char *obs_module_description(void)
+{
+	return "Image manipulation source";
 }

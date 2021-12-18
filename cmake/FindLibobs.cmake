@@ -32,11 +32,11 @@ find_path(LIBOBS_INCLUDE_DIR
 		ENV obsPath
 		${obsPath}
 	PATHS
-		/usr/include /usr/local/include /opt/local/include /sw/include
+	  /usr/include /usr/local/include /opt/local/include /sw/include
 	PATH_SUFFIXES
 		libobs
 	)
-
+message("Libobs Include Dir: ${LIBOBS_INCLUDE_DIR}")
 function(find_obs_lib base_name repo_build_path lib_name)
 	string(TOUPPER "${base_name}" base_name_u)
 
@@ -44,7 +44,7 @@ function(find_obs_lib base_name repo_build_path lib_name)
 		set(_build_type_${repo_build_path} "${_build_type_base}/${repo_build_path}")
 		set(_build_type_${repo_build_path}${_lib_suffix} "${_build_type_base}${_lib_suffix}/${repo_build_path}")
 	endif()
-
+	message("Base Name U: ${base_name_u}")
 	find_library(${base_name_u}_LIB
 		NAMES ${_${base_name_u}_LIBRARIES} ${lib_name} lib${lib_name}
 		HINTS
@@ -53,7 +53,7 @@ function(find_obs_lib base_name repo_build_path lib_name)
 			${obsPath}
 			${_${base_name_u}_LIBRARY_DIRS}
 		PATHS
-			/usr/lib /usr/local/lib /opt/local/lib /sw/lib
+			usr/lib /usr/local/lib /opt/local/lib /sw/lib
 		PATH_SUFFIXES
 			lib${_lib_suffix} lib
 			libs${_lib_suffix} libs
@@ -72,6 +72,9 @@ function(find_obs_lib base_name repo_build_path lib_name)
 			build/${repo_build_path}/Debug
 			build/${repo_build_path}/RelWithDebInfo
 		)
+		message("${base_name_u}_LIB: ${LIBOBS_LIB}")
+		message("lib_name: ${lib_name}")
+		message("lib{lib_name}: lib${lib_name}")
 endfunction()
 
 find_obs_lib(LIBOBS libobs obs)
