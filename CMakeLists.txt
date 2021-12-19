@@ -24,16 +24,18 @@ find_package(Libobs REQUIRED)
 
 # add_executable(image-manipulation image-manipulation.cpp)
 
-configure_file(image-manipulation.hpp.in ${CMAKE_SOURCE_DIR}/image-manipulation.hpp)
+configure_file(src/image-manipulation.hpp.in ${CMAKE_SOURCE_DIR}/src/image-manipulation.hpp)
 
 set(image-manipulation_SOURCES
-    image-manipulation.cpp
-    image-manipulation.hpp
+    src/image-manipulation.cpp
+    src/image-manipulation.hpp
 )
 
 add_library(image-manipulation MODULE
         ${image-manipulation_SOURCES}
 )
+
+set_target_properties(image-manipulation PROPERTIES PREFIX "")
 
 target_link_libraries(image-manipulation 
     ${LIBOBS_LIBRARIES}
