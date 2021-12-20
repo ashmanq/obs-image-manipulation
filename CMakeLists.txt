@@ -22,13 +22,10 @@ endif ()
 
 find_package(Libobs REQUIRED)
 
-# add_executable(image-manipulation image-manipulation.cpp)
-
-configure_file(src/image-manipulation.hpp.in ${CMAKE_SOURCE_DIR}/src/image-manipulation.hpp)
-
 set(image-manipulation_SOURCES
-    src/image-manipulation.cpp
-    src/image-manipulation.hpp
+    src/image-manipulation-plugin.cpp
+    src/sources/image-manipulation-source.cpp
+    src/sources/image-manipulation-source.hpp
 )
 
 add_library(image-manipulation MODULE
